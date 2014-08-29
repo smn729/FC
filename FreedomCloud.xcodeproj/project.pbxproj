@@ -1,0 +1,455 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		229B5E1F19B0B13F00AD7BA3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229B5E1E19B0B13F00AD7BA3 /* Foundation.framework */; };
+		229B5E2119B0B13F00AD7BA3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229B5E2019B0B13F00AD7BA3 /* CoreGraphics.framework */; };
+		229B5E2319B0B13F00AD7BA3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229B5E2219B0B13F00AD7BA3 /* UIKit.framework */; };
+		229B5E2919B0B13F00AD7BA3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 229B5E2719B0B13F00AD7BA3 /* InfoPlist.strings */; };
+		229B5E2B19B0B13F00AD7BA3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 229B5E2A19B0B13F00AD7BA3 /* main.m */; };
+		229B5E2F19B0B13F00AD7BA3 /* FCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 229B5E2E19B0B13F00AD7BA3 /* FCAppDelegate.m */; };
+		229B5E3119B0B13F00AD7BA3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 229B5E3019B0B13F00AD7BA3 /* Images.xcassets */; };
+		229B5E3819B0B13F00AD7BA3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229B5E3719B0B13F00AD7BA3 /* XCTest.framework */; };
+		229B5E3919B0B13F00AD7BA3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229B5E1E19B0B13F00AD7BA3 /* Foundation.framework */; };
+		229B5E3A19B0B13F00AD7BA3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229B5E2219B0B13F00AD7BA3 /* UIKit.framework */; };
+		229B5E4219B0B13F00AD7BA3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 229B5E4019B0B13F00AD7BA3 /* InfoPlist.strings */; };
+		229B5E4419B0B13F00AD7BA3 /* FreedomCloudTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 229B5E4319B0B13F00AD7BA3 /* FreedomCloudTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		229B5E3B19B0B13F00AD7BA3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 229B5E1319B0B13F00AD7BA3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 229B5E1A19B0B13F00AD7BA3;
+			remoteInfo = FreedomCloud;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		229B5E1B19B0B13F00AD7BA3 /* FreedomCloud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreedomCloud.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		229B5E1E19B0B13F00AD7BA3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		229B5E2019B0B13F00AD7BA3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		229B5E2219B0B13F00AD7BA3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		229B5E2619B0B13F00AD7BA3 /* FreedomCloud-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FreedomCloud-Info.plist"; sourceTree = "<group>"; };
+		229B5E2819B0B13F00AD7BA3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		229B5E2A19B0B13F00AD7BA3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		229B5E2C19B0B13F00AD7BA3 /* FreedomCloud-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FreedomCloud-Prefix.pch"; sourceTree = "<group>"; };
+		229B5E2D19B0B13F00AD7BA3 /* FCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCAppDelegate.h; sourceTree = "<group>"; };
+		229B5E2E19B0B13F00AD7BA3 /* FCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCAppDelegate.m; sourceTree = "<group>"; };
+		229B5E3019B0B13F00AD7BA3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		229B5E3619B0B13F00AD7BA3 /* FreedomCloudTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FreedomCloudTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		229B5E3719B0B13F00AD7BA3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		229B5E3F19B0B13F00AD7BA3 /* FreedomCloudTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FreedomCloudTests-Info.plist"; sourceTree = "<group>"; };
+		229B5E4119B0B13F00AD7BA3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		229B5E4319B0B13F00AD7BA3 /* FreedomCloudTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreedomCloudTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		229B5E1819B0B13F00AD7BA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				229B5E2119B0B13F00AD7BA3 /* CoreGraphics.framework in Frameworks */,
+				229B5E2319B0B13F00AD7BA3 /* UIKit.framework in Frameworks */,
+				229B5E1F19B0B13F00AD7BA3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		229B5E3319B0B13F00AD7BA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				229B5E3819B0B13F00AD7BA3 /* XCTest.framework in Frameworks */,
+				229B5E3A19B0B13F00AD7BA3 /* UIKit.framework in Frameworks */,
+				229B5E3919B0B13F00AD7BA3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		229B5E1219B0B13F00AD7BA3 = {
+			isa = PBXGroup;
+			children = (
+				229B5E2419B0B13F00AD7BA3 /* FreedomCloud */,
+				229B5E3D19B0B13F00AD7BA3 /* FreedomCloudTests */,
+				229B5E1D19B0B13F00AD7BA3 /* Frameworks */,
+				229B5E1C19B0B13F00AD7BA3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		229B5E1C19B0B13F00AD7BA3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				229B5E1B19B0B13F00AD7BA3 /* FreedomCloud.app */,
+				229B5E3619B0B13F00AD7BA3 /* FreedomCloudTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		229B5E1D19B0B13F00AD7BA3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				229B5E1E19B0B13F00AD7BA3 /* Foundation.framework */,
+				229B5E2019B0B13F00AD7BA3 /* CoreGraphics.framework */,
+				229B5E2219B0B13F00AD7BA3 /* UIKit.framework */,
+				229B5E3719B0B13F00AD7BA3 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		229B5E2419B0B13F00AD7BA3 /* FreedomCloud */ = {
+			isa = PBXGroup;
+			children = (
+				229B5E2D19B0B13F00AD7BA3 /* FCAppDelegate.h */,
+				229B5E2E19B0B13F00AD7BA3 /* FCAppDelegate.m */,
+				229B5E3019B0B13F00AD7BA3 /* Images.xcassets */,
+				229B5E2519B0B13F00AD7BA3 /* Supporting Files */,
+			);
+			path = FreedomCloud;
+			sourceTree = "<group>";
+		};
+		229B5E2519B0B13F00AD7BA3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				229B5E2619B0B13F00AD7BA3 /* FreedomCloud-Info.plist */,
+				229B5E2719B0B13F00AD7BA3 /* InfoPlist.strings */,
+				229B5E2A19B0B13F00AD7BA3 /* main.m */,
+				229B5E2C19B0B13F00AD7BA3 /* FreedomCloud-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		229B5E3D19B0B13F00AD7BA3 /* FreedomCloudTests */ = {
+			isa = PBXGroup;
+			children = (
+				229B5E4319B0B13F00AD7BA3 /* FreedomCloudTests.m */,
+				229B5E3E19B0B13F00AD7BA3 /* Supporting Files */,
+			);
+			path = FreedomCloudTests;
+			sourceTree = "<group>";
+		};
+		229B5E3E19B0B13F00AD7BA3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				229B5E3F19B0B13F00AD7BA3 /* FreedomCloudTests-Info.plist */,
+				229B5E4019B0B13F00AD7BA3 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		229B5E1A19B0B13F00AD7BA3 /* FreedomCloud */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 229B5E4719B0B13F00AD7BA3 /* Build configuration list for PBXNativeTarget "FreedomCloud" */;
+			buildPhases = (
+				229B5E1719B0B13F00AD7BA3 /* Sources */,
+				229B5E1819B0B13F00AD7BA3 /* Frameworks */,
+				229B5E1919B0B13F00AD7BA3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FreedomCloud;
+			productName = FreedomCloud;
+			productReference = 229B5E1B19B0B13F00AD7BA3 /* FreedomCloud.app */;
+			productType = "com.apple.product-type.application";
+		};
+		229B5E3519B0B13F00AD7BA3 /* FreedomCloudTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 229B5E4A19B0B13F00AD7BA3 /* Build configuration list for PBXNativeTarget "FreedomCloudTests" */;
+			buildPhases = (
+				229B5E3219B0B13F00AD7BA3 /* Sources */,
+				229B5E3319B0B13F00AD7BA3 /* Frameworks */,
+				229B5E3419B0B13F00AD7BA3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				229B5E3C19B0B13F00AD7BA3 /* PBXTargetDependency */,
+			);
+			name = FreedomCloudTests;
+			productName = FreedomCloudTests;
+			productReference = 229B5E3619B0B13F00AD7BA3 /* FreedomCloudTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		229B5E1319B0B13F00AD7BA3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = FC;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Sam;
+				TargetAttributes = {
+					229B5E3519B0B13F00AD7BA3 = {
+						TestTargetID = 229B5E1A19B0B13F00AD7BA3;
+					};
+				};
+			};
+			buildConfigurationList = 229B5E1619B0B13F00AD7BA3 /* Build configuration list for PBXProject "FreedomCloud" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 229B5E1219B0B13F00AD7BA3;
+			productRefGroup = 229B5E1C19B0B13F00AD7BA3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				229B5E1A19B0B13F00AD7BA3 /* FreedomCloud */,
+				229B5E3519B0B13F00AD7BA3 /* FreedomCloudTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		229B5E1919B0B13F00AD7BA3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				229B5E2919B0B13F00AD7BA3 /* InfoPlist.strings in Resources */,
+				229B5E3119B0B13F00AD7BA3 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		229B5E3419B0B13F00AD7BA3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				229B5E4219B0B13F00AD7BA3 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		229B5E1719B0B13F00AD7BA3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				229B5E2B19B0B13F00AD7BA3 /* main.m in Sources */,
+				229B5E2F19B0B13F00AD7BA3 /* FCAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		229B5E3219B0B13F00AD7BA3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				229B5E4419B0B13F00AD7BA3 /* FreedomCloudTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		229B5E3C19B0B13F00AD7BA3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 229B5E1A19B0B13F00AD7BA3 /* FreedomCloud */;
+			targetProxy = 229B5E3B19B0B13F00AD7BA3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		229B5E2719B0B13F00AD7BA3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				229B5E2819B0B13F00AD7BA3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		229B5E4019B0B13F00AD7BA3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				229B5E4119B0B13F00AD7BA3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		229B5E4519B0B13F00AD7BA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		229B5E4619B0B13F00AD7BA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		229B5E4819B0B13F00AD7BA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FreedomCloud/FreedomCloud-Prefix.pch";
+				INFOPLIST_FILE = "FreedomCloud/FreedomCloud-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		229B5E4919B0B13F00AD7BA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FreedomCloud/FreedomCloud-Prefix.pch";
+				INFOPLIST_FILE = "FreedomCloud/FreedomCloud-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		229B5E4B19B0B13F00AD7BA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FreedomCloud.app/FreedomCloud";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FreedomCloud/FreedomCloud-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "FreedomCloudTests/FreedomCloudTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		229B5E4C19B0B13F00AD7BA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FreedomCloud.app/FreedomCloud";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FreedomCloud/FreedomCloud-Prefix.pch";
+				INFOPLIST_FILE = "FreedomCloudTests/FreedomCloudTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		229B5E1619B0B13F00AD7BA3 /* Build configuration list for PBXProject "FreedomCloud" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				229B5E4519B0B13F00AD7BA3 /* Debug */,
+				229B5E4619B0B13F00AD7BA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		229B5E4719B0B13F00AD7BA3 /* Build configuration list for PBXNativeTarget "FreedomCloud" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				229B5E4819B0B13F00AD7BA3 /* Debug */,
+				229B5E4919B0B13F00AD7BA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		229B5E4A19B0B13F00AD7BA3 /* Build configuration list for PBXNativeTarget "FreedomCloudTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				229B5E4B19B0B13F00AD7BA3 /* Debug */,
+				229B5E4C19B0B13F00AD7BA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 229B5E1319B0B13F00AD7BA3 /* Project object */;
+}
