@@ -19,9 +19,34 @@
 		229B5E3A19B0B13F00AD7BA3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229B5E2219B0B13F00AD7BA3 /* UIKit.framework */; };
 		229B5E4219B0B13F00AD7BA3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 229B5E4019B0B13F00AD7BA3 /* InfoPlist.strings */; };
 		229B5E4419B0B13F00AD7BA3 /* FreedomCloudTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 229B5E4319B0B13F00AD7BA3 /* FreedomCloudTests.m */; };
+		229B5E5319B0B25900AD7BA3 /* FCSuperVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 229B5E5219B0B25900AD7BA3 /* FCSuperVC.m */; };
+		229B5E5619B0B26800AD7BA3 /* FCSuperView.m in Sources */ = {isa = PBXBuildFile; fileRef = 229B5E5519B0B26800AD7BA3 /* FCSuperView.m */; };
+		229B5E5A19B0B28F00AD7BA3 /* FCMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 229B5E5819B0B28F00AD7BA3 /* FCMainVC.m */; };
+		229B5E5B19B0B28F00AD7BA3 /* FCMainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 229B5E5919B0B28F00AD7BA3 /* FCMainVC.xib */; };
+		229B5E6019B0B3F600AD7BA3 /* FCSuperObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 229B5E5F19B0B3F600AD7BA3 /* FCSuperObject.m */; };
+		229B5E6319B0B41B00AD7BA3 /* FCMainNetWorkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 229B5E6219B0B41B00AD7BA3 /* FCMainNetWorkModel.m */; };
+		229B5E9719B0B48600AD7BA3 /* libFCTools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 229B5E9619B0B48600AD7BA3 /* libFCTools.a */; };
+		229B5F3219B0C13100AD7BA3 /* users.xml in Resources */ = {isa = PBXBuildFile; fileRef = 229B5F3119B0C13100AD7BA3 /* users.xml */; };
+		229B5F3419B0C1E000AD7BA3 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 229B5F3319B0C1E000AD7BA3 /* libxml2.dylib */; };
+		229B5F4019B177C100AD7BA3 /* FCSuperRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 229B5F3F19B177C100AD7BA3 /* FCSuperRequestModel.m */; };
+		229B5F4319B1795900AD7BA3 /* FCLoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 229B5F4219B1795900AD7BA3 /* FCLoginModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		22751B5E19B17F7100A4543D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 229B5E9C19B0B87400AD7BA3 /* FCTools.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 229B5E6D19B0B45F00AD7BA3;
+			remoteInfo = FCTools;
+		};
+		22751B6019B17F7100A4543D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 229B5E9C19B0B87400AD7BA3 /* FCTools.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 229B5E7D19B0B45F00AD7BA3;
+			remoteInfo = FCToolsTests;
+		};
 		229B5E3B19B0B13F00AD7BA3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 229B5E1319B0B13F00AD7BA3 /* Project object */;
@@ -48,6 +73,25 @@
 		229B5E3F19B0B13F00AD7BA3 /* FreedomCloudTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FreedomCloudTests-Info.plist"; sourceTree = "<group>"; };
 		229B5E4119B0B13F00AD7BA3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		229B5E4319B0B13F00AD7BA3 /* FreedomCloudTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreedomCloudTests.m; sourceTree = "<group>"; };
+		229B5E5119B0B25900AD7BA3 /* FCSuperVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCSuperVC.h; sourceTree = "<group>"; };
+		229B5E5219B0B25900AD7BA3 /* FCSuperVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCSuperVC.m; sourceTree = "<group>"; };
+		229B5E5419B0B26800AD7BA3 /* FCSuperView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCSuperView.h; sourceTree = "<group>"; };
+		229B5E5519B0B26800AD7BA3 /* FCSuperView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCSuperView.m; sourceTree = "<group>"; };
+		229B5E5719B0B28F00AD7BA3 /* FCMainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCMainVC.h; sourceTree = "<group>"; };
+		229B5E5819B0B28F00AD7BA3 /* FCMainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCMainVC.m; sourceTree = "<group>"; };
+		229B5E5919B0B28F00AD7BA3 /* FCMainVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCMainVC.xib; sourceTree = "<group>"; };
+		229B5E5E19B0B3F600AD7BA3 /* FCSuperObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCSuperObject.h; sourceTree = "<group>"; };
+		229B5E5F19B0B3F600AD7BA3 /* FCSuperObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCSuperObject.m; sourceTree = "<group>"; };
+		229B5E6119B0B41B00AD7BA3 /* FCMainNetWorkModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCMainNetWorkModel.h; sourceTree = "<group>"; };
+		229B5E6219B0B41B00AD7BA3 /* FCMainNetWorkModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCMainNetWorkModel.m; sourceTree = "<group>"; };
+		229B5E9619B0B48600AD7BA3 /* libFCTools.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFCTools.a; path = "../FCTools/build/Debug-iphoneos/libFCTools.a"; sourceTree = "<group>"; };
+		229B5E9C19B0B87400AD7BA3 /* FCTools.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FCTools.xcodeproj; path = ../FCTools/FCTools.xcodeproj; sourceTree = SOURCE_ROOT; };
+		229B5F3119B0C13100AD7BA3 /* users.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = users.xml; sourceTree = "<group>"; };
+		229B5F3319B0C1E000AD7BA3 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		229B5F3E19B177C100AD7BA3 /* FCSuperRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCSuperRequestModel.h; sourceTree = "<group>"; };
+		229B5F3F19B177C100AD7BA3 /* FCSuperRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCSuperRequestModel.m; sourceTree = "<group>"; };
+		229B5F4119B1795900AD7BA3 /* FCLoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCLoginModel.h; sourceTree = "<group>"; };
+		229B5F4219B1795900AD7BA3 /* FCLoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCLoginModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +99,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				229B5F3419B0C1E000AD7BA3 /* libxml2.dylib in Frameworks */,
+				229B5E9719B0B48600AD7BA3 /* libFCTools.a in Frameworks */,
 				229B5E2119B0B13F00AD7BA3 /* CoreGraphics.framework in Frameworks */,
 				229B5E2319B0B13F00AD7BA3 /* UIKit.framework in Frameworks */,
 				229B5E1F19B0B13F00AD7BA3 /* Foundation.framework in Frameworks */,
@@ -74,9 +120,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22751B5A19B17F7100A4543D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				22751B5F19B17F7100A4543D /* libFCTools.a */,
+				22751B6119B17F7100A4543D /* FCToolsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		229B5E1219B0B13F00AD7BA3 = {
 			isa = PBXGroup;
 			children = (
+				229B5E9C19B0B87400AD7BA3 /* FCTools.xcodeproj */,
 				229B5E2419B0B13F00AD7BA3 /* FreedomCloud */,
 				229B5E3D19B0B13F00AD7BA3 /* FreedomCloudTests */,
 				229B5E1D19B0B13F00AD7BA3 /* Frameworks */,
@@ -96,6 +152,8 @@
 		229B5E1D19B0B13F00AD7BA3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				229B5F3319B0C1E000AD7BA3 /* libxml2.dylib */,
+				229B5E9619B0B48600AD7BA3 /* libFCTools.a */,
 				229B5E1E19B0B13F00AD7BA3 /* Foundation.framework */,
 				229B5E2019B0B13F00AD7BA3 /* CoreGraphics.framework */,
 				229B5E2219B0B13F00AD7BA3 /* UIKit.framework */,
@@ -109,7 +167,10 @@
 			children = (
 				229B5E2D19B0B13F00AD7BA3 /* FCAppDelegate.h */,
 				229B5E2E19B0B13F00AD7BA3 /* FCAppDelegate.m */,
-				229B5E3019B0B13F00AD7BA3 /* Images.xcassets */,
+				229B5E5019B0B20400AD7BA3 /* Classes */,
+				229B5E4D19B0B1E800AD7BA3 /* Models */,
+				229B5E4E19B0B1E800AD7BA3 /* NetWork */,
+				229B5E4F19B0B1E800AD7BA3 /* SuperClass */,
 				229B5E2519B0B13F00AD7BA3 /* Supporting Files */,
 			);
 			path = FreedomCloud;
@@ -118,6 +179,7 @@
 		229B5E2519B0B13F00AD7BA3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				229B5E3019B0B13F00AD7BA3 /* Images.xcassets */,
 				229B5E2619B0B13F00AD7BA3 /* FreedomCloud-Info.plist */,
 				229B5E2719B0B13F00AD7BA3 /* InfoPlist.strings */,
 				229B5E2A19B0B13F00AD7BA3 /* main.m */,
@@ -144,6 +206,58 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		229B5E4D19B0B1E800AD7BA3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				229B5F4119B1795900AD7BA3 /* FCLoginModel.h */,
+				229B5F4219B1795900AD7BA3 /* FCLoginModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		229B5E4E19B0B1E800AD7BA3 /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				229B5E6119B0B41B00AD7BA3 /* FCMainNetWorkModel.h */,
+				229B5E6219B0B41B00AD7BA3 /* FCMainNetWorkModel.m */,
+				229B5F3D19B1778E00AD7BA3 /* RquestModel */,
+			);
+			path = NetWork;
+			sourceTree = "<group>";
+		};
+		229B5E4F19B0B1E800AD7BA3 /* SuperClass */ = {
+			isa = PBXGroup;
+			children = (
+				229B5E5119B0B25900AD7BA3 /* FCSuperVC.h */,
+				229B5E5219B0B25900AD7BA3 /* FCSuperVC.m */,
+				229B5E5419B0B26800AD7BA3 /* FCSuperView.h */,
+				229B5E5519B0B26800AD7BA3 /* FCSuperView.m */,
+				229B5E5E19B0B3F600AD7BA3 /* FCSuperObject.h */,
+				229B5E5F19B0B3F600AD7BA3 /* FCSuperObject.m */,
+				229B5F3E19B177C100AD7BA3 /* FCSuperRequestModel.h */,
+				229B5F3F19B177C100AD7BA3 /* FCSuperRequestModel.m */,
+			);
+			path = SuperClass;
+			sourceTree = "<group>";
+		};
+		229B5E5019B0B20400AD7BA3 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				229B5E5719B0B28F00AD7BA3 /* FCMainVC.h */,
+				229B5E5819B0B28F00AD7BA3 /* FCMainVC.m */,
+				229B5E5919B0B28F00AD7BA3 /* FCMainVC.xib */,
+				229B5F3119B0C13100AD7BA3 /* users.xml */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		229B5F3D19B1778E00AD7BA3 /* RquestModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RquestModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -152,8 +266,8 @@
 			buildConfigurationList = 229B5E4719B0B13F00AD7BA3 /* Build configuration list for PBXNativeTarget "FreedomCloud" */;
 			buildPhases = (
 				229B5E1719B0B13F00AD7BA3 /* Sources */,
-				229B5E1819B0B13F00AD7BA3 /* Frameworks */,
 				229B5E1919B0B13F00AD7BA3 /* Resources */,
+				229B5E1819B0B13F00AD7BA3 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -207,6 +321,12 @@
 			mainGroup = 229B5E1219B0B13F00AD7BA3;
 			productRefGroup = 229B5E1C19B0B13F00AD7BA3 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 22751B5A19B17F7100A4543D /* Products */;
+					ProjectRef = 229B5E9C19B0B87400AD7BA3 /* FCTools.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				229B5E1A19B0B13F00AD7BA3 /* FreedomCloud */,
@@ -215,13 +335,32 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		22751B5F19B17F7100A4543D /* libFCTools.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libFCTools.a;
+			remoteRef = 22751B5E19B17F7100A4543D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		22751B6119B17F7100A4543D /* FCToolsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = FCToolsTests.xctest;
+			remoteRef = 22751B6019B17F7100A4543D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		229B5E1919B0B13F00AD7BA3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				229B5F3219B0C13100AD7BA3 /* users.xml in Resources */,
 				229B5E2919B0B13F00AD7BA3 /* InfoPlist.strings in Resources */,
 				229B5E3119B0B13F00AD7BA3 /* Images.xcassets in Resources */,
+				229B5E5B19B0B28F00AD7BA3 /* FCMainVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,8 +379,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				229B5E5319B0B25900AD7BA3 /* FCSuperVC.m in Sources */,
+				229B5F4319B1795900AD7BA3 /* FCLoginModel.m in Sources */,
+				229B5E6019B0B3F600AD7BA3 /* FCSuperObject.m in Sources */,
+				229B5F4019B177C100AD7BA3 /* FCSuperRequestModel.m in Sources */,
 				229B5E2B19B0B13F00AD7BA3 /* main.m in Sources */,
+				229B5E6319B0B41B00AD7BA3 /* FCMainNetWorkModel.m in Sources */,
 				229B5E2F19B0B13F00AD7BA3 /* FCAppDelegate.m in Sources */,
+				229B5E5619B0B26800AD7BA3 /* FCSuperView.m in Sources */,
+				229B5E5A19B0B28F00AD7BA3 /* FCMainVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,12 +504,33 @@
 		229B5E4819B0B13F00AD7BA3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					"armv7,armv7s",
+				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FreedomCloud/FreedomCloud-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(BUILT_PRODUCTS_DIR)",
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
+				);
 				INFOPLIST_FILE = "FreedomCloud/FreedomCloud-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(BUILT_PRODUCTS_DIR)",
+				);
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"$(BUILT_PRODUCTS_DIR)/libFCTools.a",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -371,12 +538,33 @@
 		229B5E4919B0B13F00AD7BA3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					"armv7,armv7s",
+				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FreedomCloud/FreedomCloud-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(BUILT_PRODUCTS_DIR)",
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
+				);
 				INFOPLIST_FILE = "FreedomCloud/FreedomCloud-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(BUILT_PRODUCTS_DIR)",
+				);
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"$(BUILT_PRODUCTS_DIR)/libFCTools.a",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -440,6 +628,7 @@
 				229B5E4919B0B13F00AD7BA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		229B5E4A19B0B13F00AD7BA3 /* Build configuration list for PBXNativeTarget "FreedomCloudTests" */ = {
 			isa = XCConfigurationList;
@@ -448,6 +637,7 @@
 				229B5E4C19B0B13F00AD7BA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
