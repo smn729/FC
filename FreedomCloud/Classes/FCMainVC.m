@@ -27,6 +27,13 @@
     
     NSData *xmlData = [NSData dataWithContentsOfFile:path];
     [self parseXML:xmlData];
+    
+    NSString *newXML = nil;
+    DDXMLElement *element = [[DDXMLElement alloc] initWithName:@"root"];
+    [element setValuesForKeysWithDictionary:@{@"key1": @"value1", @"key2":@"value2", @"key3":@"value3"}];
+    
+    newXML = [element stringValue];
+
 }
 
 -(void)parseXML:(NSData *) data
