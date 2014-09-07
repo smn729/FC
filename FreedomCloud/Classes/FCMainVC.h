@@ -7,7 +7,10 @@
 //
 
 #import "FCSuperVC.h"
+#import "FCLoginModel.h"
 
 @interface FCMainVC : FCSuperVC
+
+@property (nonatomic, strong) FCLoginModel *loginModel;
 
 @end

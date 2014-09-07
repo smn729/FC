@@ -10,33 +10,42 @@
 #import "FCTools/DDXML.h"
 #import "FCTools/DDXMLElementAdditions.h"
 
+
 @interface FCMainVC ()
 
 @end
 
 @implementation FCMainVC
 
+#pragma mark - Wrapper
+
+- (FCLoginModel *)loginModel
+{
+    if (nil == _loginModel)
+    {
+        _loginModel = [FCLoginModel shareRequestWithSuccessBlock:^(FCSuperRequestModel *model) {
+            
+        } failBlock:^(FCSuperRequestModel *model) {
+            
+        }];
+    }
+    
+    
+    return _loginModel;
+}
+
+#pragma mark - Life Cycle
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"users" ofType:@"xml"];
-    NSString *xmlString = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-    DDXMLDocument *document = [[DDXMLDocument alloc] initWithXMLString:xmlString options:0 error:nil];
-    NSArray *items = [document nodesForXPath:@"//cd" error:nil];
-    
-    NSData *xmlData = [NSData dataWithContentsOfFile:path];
-    [self parseXML:xmlData];
-    
-    NSString *newXML = nil;
-    DDXMLElement *element = [[DDXMLElement alloc] initWithName:@"root"];
-    [element setValuesForKeysWithDictionary:@{@"key1": @"value1", @"key2":@"value2", @"key3":@"value3"}];
-    
-    newXML = [element stringValue];
+    [[FCMainNetworkModel shareInstance] connectToServer];
+    [self.loginModel beginRequest];
 
 }
 
--(void)parseXML:(NSData *) data
+-(void)parseXML:(NSData *)data
 {
     //文档开始（KissXML和GDataXML一样也是基于DOM的解析方式）
     DDXMLDocument *xmlDoc = [[DDXMLDocument alloc] initWithData:data options:0 error:nil];

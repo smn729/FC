@@ -12,8 +12,9 @@
 
 - (NSString *)token
 {
-    _token = [NSString stringWithFormat:@"%ld", [FCMainNetworkModel getNewToken]];
-    return _token;
+    UInt32 theToken = [FCMainNetworkModel getNewToken];
+
+    return [NSString stringWithFormat:@"%u", (unsigned int)theToken];
 }
 
 - (NSString *)account
@@ -83,5 +84,34 @@
     return _developer_code;
 }
 
+#pragma mark - Customize
+
+- (NSMutableDictionary *)getPacketBodyDic
+{
+    NSMutableDictionary *dic = [super getPacketBodyDic];
+    if (self.account.length <= 0)
+    {
+        [dic removeObjectForKey:@"account"];
+    }
+    if (self.account_id.length <= 0)
+    {
+        [dic removeObjectForKey:@"account_id"];
+    }
+    
+    return dic;
+}
+
+- (UInt16)cmdCode
+{
+    return 0x0100;
+}
+
+- (void)setupReplyBodyDic
+{
+    [self.replyBodyDic setObject:@"" forKey:@"token"];
+    [self.replyBodyDic setObject:@"" forKey:@"result"];
+    [self.replyBodyDic setObject:@"" forKey:@"method"];
+    [self.replyBodyDic setObject:@"" forKey:@"testcode"];
+}
 
 @end
