@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "FCMainNetworkModel.h"
 #import "FCTools/SamTools.h"
+#import "FCTools/DDXML.h"
+#import "FCTools/DDXMLElementAdditions.h"
 
 #define MAGIC_NUMBER            (0x69183752)
 #define VERSION_NUMBER          (0x0001)
@@ -19,6 +21,7 @@
 #define CLIENT_TYPE             @"1000"
 #define DEVELOPER               @"axis"
 #define DEVELOPER_CODE          @"1000"
+#define REQUEST_SUCCESS_CODE    @"0"
 
 typedef void (^requestSuccessBlock)(FCSuperRequestModel *model);
 typedef void (^requestFailBlock)(FCSuperRequestModel *model);
@@ -68,11 +71,14 @@ typedef void (^requestFailBlock)(FCSuperRequestModel *model);
 #pragma mark - 子类可选实现的方法
 /// 获取包体属性构成的字典，子类可以继承该方法，对字典进行修改
 - (NSMutableDictionary *)getPacketBodyDic;
+/// 解析父类无法解析的值
+- (void)parseXMLDataWithKey:(NSString *)key xmlDocument:(DDXMLDocument *)xmlDocument;
 
 #pragma mark - 被调入口
 + (instancetype)shareRequestWithSuccessBlock:(requestSuccessBlock)successBlock failBlock:(requestFailBlock)failBlock;
 
 /// 开始发送请求
 - (void)beginRequest;
+
 
 @end

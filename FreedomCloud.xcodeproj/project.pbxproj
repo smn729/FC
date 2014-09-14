@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2202847C19C41BD700400D80 /* FCLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2202847A19C41BD700400D80 /* FCLoginVC.m */; };
+		2202847D19C41BD700400D80 /* FCLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2202847B19C41BD700400D80 /* FCLoginVC.xib */; };
+		2202848019C42CD400400D80 /* FCLoginAnswerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2202847F19C42CD400400D80 /* FCLoginAnswerModel.m */; };
+		2202848A19C4531600400D80 /* WRLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2202848819C4531600400D80 /* WRLoadingView.m */; };
+		2202848B19C4531600400D80 /* WRLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2202848919C4531600400D80 /* WRLoadingView.xib */; };
 		228E2BF319B4C1BD0075A871 /* FCLoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 228E2BF219B4C1BD0075A871 /* FCLoginModel.m */; };
 		229B5E1F19B0B13F00AD7BA3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229B5E1E19B0B13F00AD7BA3 /* Foundation.framework */; };
 		229B5E2119B0B13F00AD7BA3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229B5E2019B0B13F00AD7BA3 /* CoreGraphics.framework */; };
@@ -30,6 +35,16 @@
 		229B5F3219B0C13100AD7BA3 /* users.xml in Resources */ = {isa = PBXBuildFile; fileRef = 229B5F3119B0C13100AD7BA3 /* users.xml */; };
 		229B5F3419B0C1E000AD7BA3 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 229B5F3319B0C1E000AD7BA3 /* libxml2.dylib */; };
 		229B5F4019B177C100AD7BA3 /* FCSuperRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 229B5F3F19B177C100AD7BA3 /* FCSuperRequestModel.m */; };
+		22C8FEA519C57F0C005331E6 /* FCMainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C8FEA419C57F0C005331E6 /* FCMainModel.m */; };
+		22C8FEAA19C58122005331E6 /* FCHeartbeatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C8FEA919C58122005331E6 /* FCHeartbeatModel.m */; };
+		22C8FEB219C58F3D005331E6 /* FCLiveVideoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C8FEB019C58F3D005331E6 /* FCLiveVideoVC.m */; };
+		22C8FEB319C58F3D005331E6 /* FCLiveVideoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22C8FEB119C58F3D005331E6 /* FCLiveVideoVC.xib */; };
+		22C8FEB719C58F4E005331E6 /* FCPlaybackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C8FEB519C58F4E005331E6 /* FCPlaybackVC.m */; };
+		22C8FEB819C58F4E005331E6 /* FCPlaybackVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22C8FEB619C58F4E005331E6 /* FCPlaybackVC.xib */; };
+		22C8FEBC19C58F61005331E6 /* FCDeviceManagerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C8FEBA19C58F61005331E6 /* FCDeviceManagerVC.m */; };
+		22C8FEBD19C58F61005331E6 /* FCDeviceManagerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22C8FEBB19C58F61005331E6 /* FCDeviceManagerVC.xib */; };
+		22C8FEC119C58F6C005331E6 /* FCAboutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C8FEBF19C58F6C005331E6 /* FCAboutVC.m */; };
+		22C8FEC219C58F6C005331E6 /* FCAboutVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22C8FEC019C58F6C005331E6 /* FCAboutVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +72,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2202847919C41BD700400D80 /* FCLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCLoginVC.h; sourceTree = "<group>"; };
+		2202847A19C41BD700400D80 /* FCLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCLoginVC.m; sourceTree = "<group>"; };
+		2202847B19C41BD700400D80 /* FCLoginVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCLoginVC.xib; sourceTree = "<group>"; };
+		2202847E19C42CD400400D80 /* FCLoginAnswerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCLoginAnswerModel.h; sourceTree = "<group>"; };
+		2202847F19C42CD400400D80 /* FCLoginAnswerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCLoginAnswerModel.m; sourceTree = "<group>"; };
+		2202848719C4531600400D80 /* WRLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRLoadingView.h; sourceTree = "<group>"; };
+		2202848819C4531600400D80 /* WRLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRLoadingView.m; sourceTree = "<group>"; };
+		2202848919C4531600400D80 /* WRLoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WRLoadingView.xib; sourceTree = "<group>"; };
 		228E2BF119B4C1BD0075A871 /* FCLoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCLoginModel.h; sourceTree = "<group>"; };
 		228E2BF219B4C1BD0075A871 /* FCLoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCLoginModel.m; sourceTree = "<group>"; };
 		229B5E1B19B0B13F00AD7BA3 /* FreedomCloud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreedomCloud.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +115,22 @@
 		229B5F3319B0C1E000AD7BA3 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		229B5F3E19B177C100AD7BA3 /* FCSuperRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCSuperRequestModel.h; sourceTree = "<group>"; };
 		229B5F3F19B177C100AD7BA3 /* FCSuperRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCSuperRequestModel.m; sourceTree = "<group>"; };
+		22C8FEA319C57F0C005331E6 /* FCMainModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCMainModel.h; sourceTree = "<group>"; };
+		22C8FEA419C57F0C005331E6 /* FCMainModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCMainModel.m; sourceTree = "<group>"; };
+		22C8FEA819C58122005331E6 /* FCHeartbeatModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCHeartbeatModel.h; sourceTree = "<group>"; };
+		22C8FEA919C58122005331E6 /* FCHeartbeatModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCHeartbeatModel.m; sourceTree = "<group>"; };
+		22C8FEAF19C58F3D005331E6 /* FCLiveVideoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCLiveVideoVC.h; sourceTree = "<group>"; };
+		22C8FEB019C58F3D005331E6 /* FCLiveVideoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCLiveVideoVC.m; sourceTree = "<group>"; };
+		22C8FEB119C58F3D005331E6 /* FCLiveVideoVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCLiveVideoVC.xib; sourceTree = "<group>"; };
+		22C8FEB419C58F4E005331E6 /* FCPlaybackVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCPlaybackVC.h; sourceTree = "<group>"; };
+		22C8FEB519C58F4E005331E6 /* FCPlaybackVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCPlaybackVC.m; sourceTree = "<group>"; };
+		22C8FEB619C58F4E005331E6 /* FCPlaybackVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCPlaybackVC.xib; sourceTree = "<group>"; };
+		22C8FEB919C58F61005331E6 /* FCDeviceManagerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCDeviceManagerVC.h; sourceTree = "<group>"; };
+		22C8FEBA19C58F61005331E6 /* FCDeviceManagerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCDeviceManagerVC.m; sourceTree = "<group>"; };
+		22C8FEBB19C58F61005331E6 /* FCDeviceManagerVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCDeviceManagerVC.xib; sourceTree = "<group>"; };
+		22C8FEBE19C58F6C005331E6 /* FCAboutVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCAboutVC.h; sourceTree = "<group>"; };
+		22C8FEBF19C58F6C005331E6 /* FCAboutVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCAboutVC.m; sourceTree = "<group>"; };
+		22C8FEC019C58F6C005331E6 /* FCAboutVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCAboutVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +159,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2202847619C41BC900400D80 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				2202847919C41BD700400D80 /* FCLoginVC.h */,
+				2202847A19C41BD700400D80 /* FCLoginVC.m */,
+				2202847B19C41BD700400D80 /* FCLoginVC.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		2202848519C4531000400D80 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				2202848619C4531600400D80 /* InfoView */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		2202848619C4531600400D80 /* InfoView */ = {
+			isa = PBXGroup;
+			children = (
+				2202848719C4531600400D80 /* WRLoadingView.h */,
+				2202848819C4531600400D80 /* WRLoadingView.m */,
+				2202848919C4531600400D80 /* WRLoadingView.xib */,
+			);
+			path = InfoView;
+			sourceTree = "<group>";
+		};
 		22751B5A19B17F7100A4543D /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +232,7 @@
 		229B5E2419B0B13F00AD7BA3 /* FreedomCloud */ = {
 			isa = PBXGroup;
 			children = (
+				2202848519C4531000400D80 /* Tools */,
 				229B5E2D19B0B13F00AD7BA3 /* FCAppDelegate.h */,
 				229B5E2E19B0B13F00AD7BA3 /* FCAppDelegate.m */,
 				229B5E5019B0B20400AD7BA3 /* Classes */,
@@ -233,10 +301,17 @@
 		229B5E5019B0B20400AD7BA3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				22C8FEAB19C58EA9005331E6 /* LiveVideo */,
+				22C8FEAE19C58F18005331E6 /* Playback */,
+				22C8FEAD19C58F18005331E6 /* DeviceManager */,
+				22C8FEAC19C58F18005331E6 /* About */,
 				229B5E5719B0B28F00AD7BA3 /* FCMainVC.h */,
 				229B5E5819B0B28F00AD7BA3 /* FCMainVC.m */,
 				229B5E5919B0B28F00AD7BA3 /* FCMainVC.xib */,
 				229B5F3119B0C13100AD7BA3 /* users.xml */,
+				2202847619C41BC900400D80 /* Login */,
+				22C8FEA319C57F0C005331E6 /* FCMainModel.h */,
+				22C8FEA419C57F0C005331E6 /* FCMainModel.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -246,8 +321,52 @@
 			children = (
 				228E2BF119B4C1BD0075A871 /* FCLoginModel.h */,
 				228E2BF219B4C1BD0075A871 /* FCLoginModel.m */,
+				2202847E19C42CD400400D80 /* FCLoginAnswerModel.h */,
+				2202847F19C42CD400400D80 /* FCLoginAnswerModel.m */,
+				22C8FEA819C58122005331E6 /* FCHeartbeatModel.h */,
+				22C8FEA919C58122005331E6 /* FCHeartbeatModel.m */,
 			);
 			path = RquestModel;
+			sourceTree = "<group>";
+		};
+		22C8FEAB19C58EA9005331E6 /* LiveVideo */ = {
+			isa = PBXGroup;
+			children = (
+				22C8FEAF19C58F3D005331E6 /* FCLiveVideoVC.h */,
+				22C8FEB019C58F3D005331E6 /* FCLiveVideoVC.m */,
+				22C8FEB119C58F3D005331E6 /* FCLiveVideoVC.xib */,
+			);
+			path = LiveVideo;
+			sourceTree = "<group>";
+		};
+		22C8FEAC19C58F18005331E6 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				22C8FEBE19C58F6C005331E6 /* FCAboutVC.h */,
+				22C8FEBF19C58F6C005331E6 /* FCAboutVC.m */,
+				22C8FEC019C58F6C005331E6 /* FCAboutVC.xib */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		22C8FEAD19C58F18005331E6 /* DeviceManager */ = {
+			isa = PBXGroup;
+			children = (
+				22C8FEB919C58F61005331E6 /* FCDeviceManagerVC.h */,
+				22C8FEBA19C58F61005331E6 /* FCDeviceManagerVC.m */,
+				22C8FEBB19C58F61005331E6 /* FCDeviceManagerVC.xib */,
+			);
+			path = DeviceManager;
+			sourceTree = "<group>";
+		};
+		22C8FEAE19C58F18005331E6 /* Playback */ = {
+			isa = PBXGroup;
+			children = (
+				22C8FEB419C58F4E005331E6 /* FCPlaybackVC.h */,
+				22C8FEB519C58F4E005331E6 /* FCPlaybackVC.m */,
+				22C8FEB619C58F4E005331E6 /* FCPlaybackVC.xib */,
+			);
+			path = Playback;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,7 +469,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				229B5F3219B0C13100AD7BA3 /* users.xml in Resources */,
+				22C8FEBD19C58F61005331E6 /* FCDeviceManagerVC.xib in Resources */,
 				229B5E2919B0B13F00AD7BA3 /* InfoPlist.strings in Resources */,
+				22C8FEB819C58F4E005331E6 /* FCPlaybackVC.xib in Resources */,
+				2202848B19C4531600400D80 /* WRLoadingView.xib in Resources */,
+				2202847D19C41BD700400D80 /* FCLoginVC.xib in Resources */,
+				22C8FEB319C58F3D005331E6 /* FCLiveVideoVC.xib in Resources */,
+				22C8FEC219C58F6C005331E6 /* FCAboutVC.xib in Resources */,
 				229B5E3119B0B13F00AD7BA3 /* Images.xcassets in Resources */,
 				229B5E5B19B0B28F00AD7BA3 /* FCMainVC.xib in Resources */,
 			);
@@ -373,13 +498,22 @@
 			files = (
 				229B5E5319B0B25900AD7BA3 /* FCSuperVC.m in Sources */,
 				228E2BF319B4C1BD0075A871 /* FCLoginModel.m in Sources */,
+				22C8FEB719C58F4E005331E6 /* FCPlaybackVC.m in Sources */,
 				229B5E6019B0B3F600AD7BA3 /* FCSuperObject.m in Sources */,
+				22C8FEAA19C58122005331E6 /* FCHeartbeatModel.m in Sources */,
 				229B5F4019B177C100AD7BA3 /* FCSuperRequestModel.m in Sources */,
 				229B5E2B19B0B13F00AD7BA3 /* main.m in Sources */,
+				2202848019C42CD400400D80 /* FCLoginAnswerModel.m in Sources */,
 				229B5E6319B0B41B00AD7BA3 /* FCMainNetworkModel.m in Sources */,
+				22C8FEC119C58F6C005331E6 /* FCAboutVC.m in Sources */,
 				229B5E2F19B0B13F00AD7BA3 /* FCAppDelegate.m in Sources */,
+				22C8FEBC19C58F61005331E6 /* FCDeviceManagerVC.m in Sources */,
+				2202848A19C4531600400D80 /* WRLoadingView.m in Sources */,
+				22C8FEB219C58F3D005331E6 /* FCLiveVideoVC.m in Sources */,
+				2202847C19C41BD700400D80 /* FCLoginVC.m in Sources */,
 				229B5E5619B0B26800AD7BA3 /* FCSuperView.m in Sources */,
 				229B5E5A19B0B28F00AD7BA3 /* FCMainVC.m in Sources */,
+				22C8FEA519C57F0C005331E6 /* FCMainModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

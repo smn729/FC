@@ -9,21 +9,39 @@
 #import "FCMainNetworkModel.h"
 #import "FCTools/Reachability.h"
 #import "FCSuperRequestModel.h"
+#import "FCHeartbeatModel.h"
 
 
-static UInt32 token = 1;
+static int32_t token = Token_Begin;
 static FCMainNetworkModel *mainNetworkModel = nil;
 
 @interface FCMainNetworkModel()
 {
-//    FCSuperRequestModel *currentRequestModel; // 当前socket正在操作的request
+    NSTimer *heartbeatTimer; // heartbeat Timer
+    BOOL shouldKeepSocket; // 是否需要保持soket
 }
+@property (nonatomic, strong) FCHeartbeatModel *heartbeatModel;
 
 @end
 
 @implementation FCMainNetworkModel
 
 #pragma mark - Wrapper
+
+- (FCHeartbeatModel *)heartbeatModel
+{
+    if (nil == _heartbeatModel)
+    {
+        _heartbeatModel = [FCHeartbeatModel shareRequestWithSuccessBlock:^(FCSuperRequestModel *model) {
+            
+        } failBlock:^(FCSuperRequestModel *model) {
+            
+        }];
+    }
+    
+    _heartbeatModel.currentPacketToken = [NSString stringWithFormat:@"%d", Heartbeat_Token];
+    return _heartbeatModel;
+}
 
 - (NSMutableArray *)requestQueue
 {
@@ -58,7 +76,7 @@ static FCMainNetworkModel *mainNetworkModel = nil;
         // they *WILL NOT* be called on THE MAIN THREAD
         reach.reachableBlock = ^(Reachability *reach)
         {
-            NSLog(@"Reachability ---> NET Change To %@", [reach currentReachabilityString]);
+            NSLog(@"Reachability: NET Change To %@", [reach currentReachabilityString]);
             NetworkStatus netState = [reach currentReachabilityStatus];
             
             switch (netState)
@@ -81,7 +99,7 @@ static FCMainNetworkModel *mainNetworkModel = nil;
                     
                 default:
                 {
-                    NSLog(@"Reachability ---> Error--currentNetstatus: Should Never See This Line!!! ");
+                    NSLog(@"Reachability: Error--currentNetstatus: Should Never See This Line!!! ");
                 }
                     break;
             }
@@ -90,7 +108,7 @@ static FCMainNetworkModel *mainNetworkModel = nil;
         
         reach.unreachableBlock = ^(Reachability *reach)
         {
-            NSLog(@"Reachability ---> NET UNREACHABLE");
+            NSLog(@"Reachability: NET UNREACHABLE");
             self.currentNetStatus = Nettype_noNet;
         };
         
@@ -122,13 +140,28 @@ static FCMainNetworkModel *mainNetworkModel = nil;
     token ++;
     if (token >= INT32_MAX)
     {
-        token = 1;
+        token = Token_Begin;
     }
     return token;
 }
 
+- (void)beginHeartbeat
+{
+    if (nil == heartbeatTimer)
+    {
+        heartbeatTimer = [NSTimer scheduledTimerWithTimeInterval:Heartbeat_Interval target:self selector:@selector(sendHeartbeat) userInfo:nil repeats:YES];
+    }
+}
+
+- (void)connectToServerAndKeepIt
+{
+    [self connectToServer];
+    shouldKeepSocket = YES;
+}
+
 - (BOOL)connectToServer
 {
+    NSLog(@"正在连接Socket...");
     NSError *error = nil;
     if([self.protocolTcpSocket connectToHost:Cloud_Server_IP onPort:Cloud_Server_Port withTimeout:Network_Connect_Time_Out error:&error])
     {
@@ -152,6 +185,7 @@ static FCMainNetworkModel *mainNetworkModel = nil;
 
 #pragma mark - Private Method
 
+/// 获取当前队列中的请求
 - (FCSuperRequestModel *)getRequestModelWithTag:(int)tag
 {
     for(FCSuperRequestModel *aModel in self.requestQueue)
@@ -165,7 +199,11 @@ static FCMainNetworkModel *mainNetworkModel = nil;
     return nil;
 }
 
-
+- (void)sendHeartbeat
+{
+    NSLog(@"发送心跳包");
+    [self.heartbeatModel beginRequest];
+}
 
 #pragma mark - AsyncSocketDelegate
 
@@ -177,7 +215,14 @@ static FCMainNetworkModel *mainNetworkModel = nil;
  **/
 - (void)onSocket:(AsyncSocket *)sock willDisconnectWithError:(NSError *)err
 {
-    NSLog(@"Socket ---> willDisconnectWithError %@", err.localizedDescription);
+    NSLog(@"Socket: willDisconnectWithError %@", err.localizedDescription);
+    
+    for(FCSuperRequestModel *model in self.requestQueue)
+    {
+        [self.requestQueue removeObject:model];
+        model.errorCode = -1;
+        [model requestFail];
+    }
 }
 
 /**
@@ -189,14 +234,14 @@ static FCMainNetworkModel *mainNetworkModel = nil;
  **/
 - (void)onSocketDidDisconnect:(AsyncSocket *)sock
 {
-    NSLog(@"Socket ---> onSocketDidDisconnect");
+    NSLog(@"Socket: onSocketDidDisconnect");
     
     // 对所有没有处理完成的请求发送失败消息
-    for(FCSuperRequestModel *model in self.requestQueue)
+    [self.requestQueue removeAllObjects];
+    
+    if (shouldKeepSocket)
     {
-        [self.requestQueue removeObject:model];
-        model.errorCode = -1;
-        [model requestFail];
+        [self performSelector:@selector(connectToServer) withObject:nil afterDelay:Reconnect_Socket_Interval];
     }
 }
 
@@ -206,7 +251,7 @@ static FCMainNetworkModel *mainNetworkModel = nil;
  **/
 - (void)onSocket:(AsyncSocket *)sock didConnectToHost:(NSString *)host port:(UInt16)port
 {
-    NSLog(@"Socket ---> didConnectToHost %@:%hu", host, port);
+    NSLog(@"Socket: didConnectToHost %@:%hu", host, port);
     self.localHost = sock.localHost;
 
 }
@@ -217,9 +262,15 @@ static FCMainNetworkModel *mainNetworkModel = nil;
  **/
 - (void)onSocket:(AsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag
 {
-    NSLog(@"Socket ---> didReadData %d, Tag %ld", data.length, tag);
+    NSLog(@"Socket: didReadData %d, Tag %ld", data.length, tag);
+    long fTag = fabs(tag);
+    // 特殊处理
+    if (fTag < Token_Begin)
+    {
+        NSLog(@"didReadData 特殊处理 %ld", fTag);
+    }
     // 包头
-    if (tag < 0)
+    else if (tag < 0)
     {
         NSDictionary *headerDic = [FCSuperRequestModel parsePacketHeader:data];
         int localPacketBodyLenth = [headerDic[@"packetBodyLenth"] intValue];
@@ -256,7 +307,7 @@ static FCMainNetworkModel *mainNetworkModel = nil;
  **/
 - (void)onSocket:(AsyncSocket *)sock didReadPartialDataOfLength:(CFIndex)partialLength tag:(long)tag
 {
-    NSLog(@"Socket ---> didReadPartialDataOfLength %ld Tag %ld", partialLength, tag);
+//    NSLog(@"Socket: didReadPartialDataOfLength %ld Tag %ld", partialLength, tag);
 }
 
 /**
@@ -264,9 +315,31 @@ static FCMainNetworkModel *mainNetworkModel = nil;
  **/
 - (void)onSocket:(AsyncSocket *)sock didWriteDataWithTag:(long)tag
 {
-    NSLog(@"Socket ---> didWriteDataWithTag Tag %ld", tag);
-    
-    [sock readDataToLength:20 withTimeout:Network_Read_Time_Out tag:tag];
+    NSLog(@"Socket: didWriteDataWithTag Tag %ld", tag);
+    // 特殊处理
+    long fTag = fabs(tag);
+    if (fTag < Token_Begin)
+    {
+        switch (fTag)
+        {
+            // 心跳数据包
+            case Heartbeat_Token:
+            {
+                // Do nothing
+            }
+                break;
+                
+            default:
+            {
+                
+            }
+                break;
+        }
+    }
+    else
+    {
+        [sock readDataToLength:20 withTimeout:Network_Read_Time_Out tag:tag];
+    }
 }
 
 /**
@@ -275,7 +348,7 @@ static FCMainNetworkModel *mainNetworkModel = nil;
  **/
 - (void)onSocket:(AsyncSocket *)sock didWritePartialDataOfLength:(CFIndex)partialLength tag:(long)tag
 {
-    NSLog(@"Socket ---> didWritePartialDataOfLength %ld Tag %ld", partialLength, tag);
+//    NSLog(@"Socket: didWritePartialDataOfLength %ld Tag %ld", partialLength, tag);
 }
 
 /**
@@ -294,7 +367,7 @@ static FCMainNetworkModel *mainNetworkModel = nil;
 				   elapsed:(NSTimeInterval)elapsed
 				 bytesDone:(CFIndex)length
 {
-    NSLog(@"Socket ---> shouldTimeoutReadWithTag Tag %ld", tag);
+    NSLog(@"Socket: shouldTimeoutReadWithTag Tag %ld", tag);
     
     FCSuperRequestModel *model = [self getRequestModelWithTag:tag];
     [self.requestQueue removeObject:model];
@@ -320,7 +393,7 @@ static FCMainNetworkModel *mainNetworkModel = nil;
 				   elapsed:(NSTimeInterval)elapsed
 				 bytesDone:(CFIndex)length
 {
-    NSLog(@"Socket ---> shouldTimeoutWriteWithTag Tag %ld", tag);
+    NSLog(@"Socket: shouldTimeoutWriteWithTag Tag %ld", tag);
     
     FCSuperRequestModel *model = [self getRequestModelWithTag:tag];
     [self.requestQueue removeObject:model];

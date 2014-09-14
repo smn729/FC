@@ -12,4 +12,10 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+/// 设置root视图
+- (void)setRootVCTo:(UIViewController *)vc;
+/// 转到主视图
+- (void)showMainView;
+
 @end
+extern FCAppDelegate *appDelegate;

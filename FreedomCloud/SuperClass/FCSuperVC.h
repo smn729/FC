@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FCTools/FCTools.h"
 #import "FCMainNetworkModel.h"
 
 @interface FCSuperVC : UIViewController

@@ -9,6 +9,7 @@
 #import "FCMainVC.h"
 #import "FCTools/DDXML.h"
 #import "FCTools/DDXMLElementAdditions.h"
+#import "FCLoginAnswerModel.h"
 
 
 @interface FCMainVC ()
@@ -19,20 +20,7 @@
 
 #pragma mark - Wrapper
 
-- (FCLoginModel *)loginModel
-{
-    if (nil == _loginModel)
-    {
-        _loginModel = [FCLoginModel shareRequestWithSuccessBlock:^(FCSuperRequestModel *model) {
-            
-        } failBlock:^(FCSuperRequestModel *model) {
-            
-        }];
-    }
-    
-    
-    return _loginModel;
-}
+
 
 #pragma mark - Life Cycle
 
@@ -40,9 +28,17 @@
 {
     [super viewDidLoad];
     
-    [[FCMainNetworkModel shareInstance] connectToServer];
-    [self.loginModel beginRequest];
+    // 测试
+    FCLoginAnswerModel *modle = [FCLoginAnswerModel shareRequestWithSuccessBlock:^(FCSuperRequestModel *model) {
+        
+    } failBlock:^(FCSuperRequestModel *model) {
+        
+    }];
 
+    NSString *xmlFilePath = [[NSBundle mainBundle] pathForResource:@"users" ofType:@"xml"];
+    NSData *xmlData = [NSData dataWithContentsOfFile:xmlFilePath];
+    DDXMLDocument *xmlDoc = [[DDXMLDocument alloc] initWithData:xmlData options:0 error:nil];
+    [modle parseXMLDataWithKey:@"devicelist" xmlDocument:xmlDoc];
 }
 
 -(void)parseXML:(NSData *)data

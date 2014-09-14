@@ -1,18 +1,43 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<catalog>
-  <cd country="USA">
-    <title>Empire Burlesque</title>
-    <artist>Bob Dylan</artist>
-    <price>10.90</price>
-  </cd>
-  <cd country="UK">
-    <title>Hide your heart</title>
-    <artist>Bonnie Tyler</artist>
-    <price>9.90</price>
-  </cd>
-  <cd country="USA">
-    <title>Greatest Hits</title> 
-    <artist>Dolly Parton</artist> 
-    <price>9.90</price> 
-  </cd>
-</catalog>
+<reply>
+    <devicelist>
+        <deviceinfo>
+            <account_device>730001</account_device>
+            <devicename>Dandenong device</devicename>
+            <type_device>1102</type_device>
+            <online>1</online>
+            <brand>axis</brand>
+            <cameralist>
+                <camerainfo>
+                    <channel>1</channel>
+                    <name>in door</name>
+                    <encodenum>2</encodenum>
+                </camerainfo>
+                <camerainfo>
+                    <channel>2</channel>
+                    <name>out door</name>
+                    <encodenum>3</encodenum>
+                </camerainfo>
+            </cameralist>
+        </deviceinfo>
+        <deviceinfo>
+            <account_device>730001</account_device>
+            <devicename>Dandenong device</devicename>
+            <type_device>1102</type_device>
+            <online>1</online>
+            <brand>axis</brand>
+            <cameralist>
+                <camerainfo>
+                    <channel>1</channel>
+                    <name>in door</name>
+                    <encodenum>2</encodenum>
+                </camerainfo>
+                <camerainfo>
+                    <channel>2</channel>
+                    <name>out door</name>
+                    <encodenum>3</encodenum>
+                </camerainfo>
+            </cameralist>
+        </deviceinfo>
+    </devicelist>
+</reply>

@@ -8,8 +8,48 @@
 
 #import "FCAppDelegate.h"
 #import "FCMainVC.h"
+#import "FCLoginVC.h"
+#import "FCMainNetworkModel.h"
+#import "FCLiveVideoVC.h"
+#import "FCPlaybackVC.h"
+#import "FCDeviceManagerVC.h"
+#import "FCAboutVC.h"
+
+FCAppDelegate *appDelegate = nil;
 
 @implementation FCAppDelegate
+
+#pragma mark - Public Method
+
+- (void)setRootVCTo:(UIViewController *)vc
+{
+    NSAssert(vc, @"rootVC不能为nil");
+    self.window.rootViewController = vc;
+}
+
+- (void)showMainView
+{
+    UITabBarController *tabController = [[UITabBarController alloc] init];
+    
+    FCLiveVideoVC *liveVC = [[FCLiveVideoVC alloc] init];
+    FCPlaybackVC *playbackVC = [[FCPlaybackVC alloc] init];
+    FCDeviceManagerVC *deviceManagerVC = [[FCDeviceManagerVC alloc] init];
+    FCAboutVC *aboutVC = [[FCAboutVC alloc] init];
+    
+    UINavigationController *liveN = [[UINavigationController alloc] initWithRootViewController:liveVC];
+    UINavigationController *playbackN = [[UINavigationController alloc] initWithRootViewController:playbackVC];
+    UINavigationController *deviceManagerN = [[UINavigationController alloc] initWithRootViewController:deviceManagerVC];
+    UINavigationController *aboutN = [[UINavigationController alloc] initWithRootViewController:aboutVC];
+    
+    tabController.viewControllers = @[liveN, playbackN, deviceManagerN, aboutN];
+    
+    [self setRootVCTo:tabController];
+}
+
+#pragma mark - Private Method
+
+
+#pragma mark - Delegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -17,9 +57,15 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     
-    FCMainVC *mainVC = [[FCMainVC alloc] init];
-    UINavigationController *rootNavigationController = [[UINavigationController alloc] initWithRootViewController:mainVC];
-    self.window.rootViewController = rootNavigationController;
+    [[FCMainNetworkModel shareInstance] connectToServerAndKeepIt];
+    
+    FCLoginVC *loginVC = [[FCLoginVC alloc] init];
+    [self setRootVCTo:loginVC];
+    
+//    FCMainVC *mainVC = [[FCMainVC alloc] init];
+//    [self setRootVCTo:mainVC];
+    
+    appDelegate = self;
     
     [self.window makeKeyAndVisible];
     return YES;

@@ -7,9 +7,6 @@
 //
 
 #import "FCSuperRequestModel.h"
-#import "FCTools/WRLoadingView.h"
-#import "FCTools/DDXML.h"
-#import "FCTools/DDXMLElementAdditions.h"
 
 @interface FCSuperRequestModel()
 {
@@ -34,11 +31,36 @@
     return _replyBodyDic;
 }
 
+#pragma mark - Child Method
+- (void)setupReplyBodyDic
+{
+    
+}
+
+- (void)parseXMLDataWithKey:(NSString *)key xmlDocument:(DDXMLDocument *)xmlDocument
+{
+    
+}
+
 #pragma mark - Public Method
 
 - (void)requestSuccess
 {
     [self parseXMLData:self.responsePacketBody];
+    
+    NSString *result = self.replyBodyDic[@"result"];
+    if (![result isEqualToString:REQUEST_SUCCESS_CODE])
+    {
+        NSString *errorMessage = [self getErrorMessageWithCode:[result intValue]];
+        [WRLoadingView showMessage:errorMessage];
+        
+        if (self.failBlock)
+        {
+            self.failBlock(self);
+        }
+        
+        return;
+    }
     
     if (self.successBlock)
     {
@@ -49,7 +71,7 @@
 - (void)requestFail
 {
     NSString *errorString = [self getErrorMessageWithCode:self.errorCode];
-    [WRLoadingView showMessage:errorString hide:3.0f];
+    [WRLoadingView showMessage:errorString];
     
     if (self.failBlock)
     {
@@ -127,6 +149,66 @@
     {
         return NSLocalizedString(@"前端设备已经满负荷，拒绝访问", nil);
     }
+    else if (code == 21)
+    {
+        return NSLocalizedString(@"SERVER_INNER_ERROR", nil);
+    }
+    else if (code == 22)
+    {
+        return NSLocalizedString(@"XML_REQUEST_ERROR", nil);
+    }
+    else if (code == 23)
+    {
+        return NSLocalizedString(@"TEST_CODE_ERROR", nil);
+    }
+    else if (code == 24)
+    {
+        return NSLocalizedString(@"TOKEN_DIFFERENT", nil);
+    }
+    else if (code == 25)
+    {
+        return NSLocalizedString(@"DB_NOT_ONLINE", nil);
+    }
+    else if (code == 26)
+    {
+        return NSLocalizedString(@"DEV_NOT_ONLINE", nil);
+    }
+    else if (code == 27)
+    {
+        return NSLocalizedString(@"CLIENT_NOT_ONLINE", nil);
+    }
+    else if (code == 28)
+    {
+        return NSLocalizedString(@"RELAY_NOT_ONLINE", nil);
+    }
+    else if (code == 29)
+    {
+        return NSLocalizedString(@"DB_NOT_RESPONSE", nil);
+    }
+    else if (code == 30)
+    {
+        return NSLocalizedString(@"DB_RESPONSE_ERROR", nil);
+    }
+    else if (code == 31)
+    {
+        return NSLocalizedString(@"DEV_RESPONSE_ERROR", nil);
+    }
+    else if (code == 32)
+    {
+        return NSLocalizedString(@"CONFIG_FILE_ERROR", nil);
+    }
+    else if (code == 33)
+    {
+        return NSLocalizedString(@"用户名或密码错误", nil);
+    }
+    else if (code == 34)
+    {
+        return NSLocalizedString(@"REACH_MAX_LOGINNUM", nil);
+    }
+    else if (code == 35)
+    {
+        return NSLocalizedString(@"RELAY_SESSIONID_ERROR", nil);
+    }
     else if (code == 101)
     {
         return NSLocalizedString(@"失败，硬盘空间不足", nil);
@@ -144,11 +226,28 @@
 }
 
 #pragma mark - Private Method
+
+#define SERVER_INNER_ERROR       21
+#define XML_REQUEST_ERROR        22
+#define TEST_CODE_ERROR          23
+#define TOKEN_DIFFERENT          24
+#define DB_NOT_ONLINE            25
+#define DEV_NOT_ONLINE           26
+#define CLIENT_NOT_ONLINE        27
+#define RELAY_NOT_ONLINE         28
+#define DB_NOT_RESPONSE          29
+#define DB_RESPONSE_ERROR        30
+#define DEV_RESPONSE_ERROR       31
+#define CONFIG_FILE_ERROR        32
+#define USER_PW_ERROR            33
+#define REACH_MAX_LOGINNUM       34
+#define RELAY_SESSIONID_ERROR    35
+
 /// 解析收到的xml回应，放入replyBodyDic
 - (void)parseXMLData:(NSData *)xmlData
 {
     NSString *xmlString = [[NSString alloc] initWithData:xmlData encoding:NSUTF8StringEncoding];
-    NSLog(@"接收XML: %@", xmlString);
+    NSLog(@"接收XML<-------- : \n%@\n", xmlString);
     
     [self setupReplyBodyDic];
     
@@ -167,12 +266,11 @@
         }
         else
         {
-            NSLog(@"ERROR: 一个未知的类别");
+            [self parseXMLDataWithKey:key xmlDocument:xmlDoc];
         }
     }
     
 //    NSLog(@"xml ---> %@", self.replyBodyDic);
-    
 }
 
 /// 将dic解析成xml字符串
@@ -243,7 +341,21 @@
 - (NSMutableDictionary *)getPacketBodyDic
 {
     NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithDictionary:[SamTools dictionaryFromPropertysInObject:self]];
-    self.currentPacketToken = dic[@"token"];
+    
+    NSString *theToken = dic[@"token"];
+    if (theToken)
+    {
+        self.currentPacketToken = theToken;
+    }
+    else if(self.currentPacketToken)
+    {
+        // 特殊的Token
+        NSLog(@"特殊的Token %@", self.currentPacketToken);
+    }
+    else
+    {
+        NSAssert(self.currentPacketToken, @"self.currentPacketToken Is nil");
+    }
     
     // TODO: 对特殊字符做处理: < / &lt; | > / &gt; | & / &amp;
     return dic;
@@ -256,7 +368,7 @@
 
     NSString *xmlString = [self convertToXml:dic];
     
-    NSLog(@"发送XML %@", xmlString);
+    NSLog(@"发送XML--------> \n%@\n", xmlString);
     
     NSData *packetBody = [xmlString dataUsingEncoding:NSUTF8StringEncoding];
     

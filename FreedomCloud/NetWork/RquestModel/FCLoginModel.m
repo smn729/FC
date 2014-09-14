@@ -12,9 +12,9 @@
 
 - (NSString *)token
 {
-    UInt32 theToken = [FCMainNetworkModel getNewToken];
-
-    return [NSString stringWithFormat:@"%u", (unsigned int)theToken];
+    int32_t theToken = [FCMainNetworkModel getNewToken];
+    
+    return [NSString stringWithFormat:@"%d", theToken];
 }
 
 - (NSString *)account
@@ -31,8 +31,7 @@
 {
     if (nil == _account_id)
     {
-        // FIXME: 测试用
-        _account_id = @"swu@joincc.com.au";
+        _account_id = @"";
     }
     
     return _account_id;
@@ -42,14 +41,24 @@
 {
     if (nil == _pw)
     {
-        _pw = @"temp";
+        _pw = @"";
     }
     return _pw;
 }
 
 - (NSString *)ip
 {
-    _ip = [FCMainNetworkModel shareInstance].localHost;
+    if (nil == _ip)
+    {
+        _ip = [SamTools getLocalHost]; // 该方法只能调用一次，第二次调用会获得空
+    }
+    
+    NSString *host = [FCMainNetworkModel shareInstance].localHost;
+    if (host.length > 0)
+    {
+        _ip = host;
+    }
+
     return _ip;
 }
 
@@ -108,6 +117,8 @@
 
 - (void)setupReplyBodyDic
 {
+    [super setupReplyBodyDic];
+    
     [self.replyBodyDic setObject:@"" forKey:@"token"];
     [self.replyBodyDic setObject:@"" forKey:@"result"];
     [self.replyBodyDic setObject:@"" forKey:@"method"];
