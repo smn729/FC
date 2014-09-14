@@ -30,7 +30,7 @@
 		229B5E5A19B0B28F00AD7BA3 /* FCMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 229B5E5819B0B28F00AD7BA3 /* FCMainVC.m */; };
 		229B5E5B19B0B28F00AD7BA3 /* FCMainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 229B5E5919B0B28F00AD7BA3 /* FCMainVC.xib */; };
 		229B5E6019B0B3F600AD7BA3 /* FCSuperObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 229B5E5F19B0B3F600AD7BA3 /* FCSuperObject.m */; };
-		229B5E6319B0B41B00AD7BA3 /* FCMainNetworkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 229B5E6219B0B41B00AD7BA3 /* FCMainNetworkModel.m */; };
+		229B5E6319B0B41B00AD7BA3 /* FCMainNetworkModel1.m in Sources */ = {isa = PBXBuildFile; fileRef = 229B5E6219B0B41B00AD7BA3 /* FCMainNetworkModel1.m */; };
 		229B5E9719B0B48600AD7BA3 /* libFCTools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 229B5E9619B0B48600AD7BA3 /* libFCTools.a */; };
 		229B5F3219B0C13100AD7BA3 /* users.xml in Resources */ = {isa = PBXBuildFile; fileRef = 229B5F3119B0C13100AD7BA3 /* users.xml */; };
 		229B5F3419B0C1E000AD7BA3 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 229B5F3319B0C1E000AD7BA3 /* libxml2.dylib */; };
@@ -107,8 +107,8 @@
 		229B5E5919B0B28F00AD7BA3 /* FCMainVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCMainVC.xib; sourceTree = "<group>"; };
 		229B5E5E19B0B3F600AD7BA3 /* FCSuperObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCSuperObject.h; sourceTree = "<group>"; };
 		229B5E5F19B0B3F600AD7BA3 /* FCSuperObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCSuperObject.m; sourceTree = "<group>"; };
-		229B5E6119B0B41B00AD7BA3 /* FCMainNetworkModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCMainNetworkModel.h; sourceTree = "<group>"; };
-		229B5E6219B0B41B00AD7BA3 /* FCMainNetworkModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCMainNetworkModel.m; sourceTree = "<group>"; };
+		229B5E6119B0B41B00AD7BA3 /* FCMainNetworkModel1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCMainNetworkModel1.h; sourceTree = "<group>"; };
+		229B5E6219B0B41B00AD7BA3 /* FCMainNetworkModel1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCMainNetworkModel1.m; sourceTree = "<group>"; };
 		229B5E9619B0B48600AD7BA3 /* libFCTools.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFCTools.a; path = "../FCTools/build/Debug-iphoneos/libFCTools.a"; sourceTree = "<group>"; };
 		229B5E9C19B0B87400AD7BA3 /* FCTools.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FCTools.xcodeproj; path = ../FCTools/FCTools.xcodeproj; sourceTree = SOURCE_ROOT; };
 		229B5F3119B0C13100AD7BA3 /* users.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = users.xml; sourceTree = "<group>"; };
@@ -276,8 +276,8 @@
 		229B5E4E19B0B1E800AD7BA3 /* NetWork */ = {
 			isa = PBXGroup;
 			children = (
-				229B5E6119B0B41B00AD7BA3 /* FCMainNetworkModel.h */,
-				229B5E6219B0B41B00AD7BA3 /* FCMainNetworkModel.m */,
+				229B5E6119B0B41B00AD7BA3 /* FCMainNetworkModel1.h */,
+				229B5E6219B0B41B00AD7BA3 /* FCMainNetworkModel1.m */,
 				229B5F3D19B1778E00AD7BA3 /* RquestModel */,
 			);
 			path = NetWork;
@@ -504,7 +504,7 @@
 				229B5F4019B177C100AD7BA3 /* FCSuperRequestModel.m in Sources */,
 				229B5E2B19B0B13F00AD7BA3 /* main.m in Sources */,
 				2202848019C42CD400400D80 /* FCLoginAnswerModel.m in Sources */,
-				229B5E6319B0B41B00AD7BA3 /* FCMainNetworkModel.m in Sources */,
+				229B5E6319B0B41B00AD7BA3 /* FCMainNetworkModel1.m in Sources */,
 				22C8FEC119C58F6C005331E6 /* FCAboutVC.m in Sources */,
 				229B5E2F19B0B13F00AD7BA3 /* FCAppDelegate.m in Sources */,
 				22C8FEBC19C58F61005331E6 /* FCDeviceManagerVC.m in Sources */,
